@@ -1,0 +1,8 @@
+<div class="page-header">
+<h2>Enter your details </h2>
+</div>
+<% if logged_in? %>
+<%= render partial: 'form' %>
+<% else %>
+	   <h4>Log in to continue</h4>
+<% end %>

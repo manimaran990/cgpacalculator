@@ -1,0 +1,16 @@
+<div class="page-header">
+	   <h2>Welcome <%= current_user.name.upcase %></h2>
+</div>
+
+<% @usersheets.each do |usersheet| %>
+	   <%= link_to "Semester #{usersheet.semester}", usersheet_path(usersheet) %> <br/><br/> 
+<% end %>
+
+
+<br>
+<br>
+<% if logged_in? %>
+<%= link_to "Add a marksheet", new_usersheet_path, class: 'btn btn-primary' %>  
+<% end %>
+<br>
+<br>

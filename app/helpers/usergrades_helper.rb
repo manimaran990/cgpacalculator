@@ -1,0 +1,2 @@
+module UsergradesHelper
+end

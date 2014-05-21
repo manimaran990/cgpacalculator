@@ -1,0 +1,91 @@
+<br>
+<center>
+	   <table border="1" width="450px" cellspacing="0px" cellpadding="5px">
+			 <tr>
+				    <th><center><b>SUBJECT</b></center></th>
+				    <th><center><b>GRADE</b></center></th>
+				    <th><center><b>CREDITS</b></center></th>
+			 </tr>
+			 <tr>
+				    <td>Visual Programming</td>
+				    <td><%= @grades.visualprog %></td>
+				    <td>3</td>
+			 </tr>
+			 <tr>
+				    <td>Software Projet Management</td>
+				    <td><%= @grades.spm %></td>
+				    <td>3</td>
+			 </tr> 
+			 <tr>
+				    <td>Unix Networking</td>
+				    <td><%= @grades.unixnetwork %></td>
+					<td>3</td>
+			 </tr>
+			 <tr>
+				    <td>Middleware</td>
+				    <td><%= @grades.middleware %></td>
+				    <td>3</td>
+			 </tr>
+	   		<tr>
+				   <td>XML and Webservices</td>
+				   <td><%= @grades.xmlweb %></td>
+				   <td>3</td>
+			</tr>
+			 <tr>
+				    <td>VP Lab</td>
+				    <td><%= @grades.vplab %></td>
+				    <td>2</td> 
+			</tr>
+			 <tr>
+				    <td>Unix Lab </td>
+				    <td><%= @grades.unixlab %></td>
+					<td>2</td>
+			 </tr>
+	   </table>
+	   <br/>
+
+	   <table border="1" width="350px" cellspacing="0px" cellpadding="5px">
+			 <tr>
+				    <td><b><center>Total Credits</center></b></td>
+				    <td><%= @grades.tot_credits %></td>
+			 </tr>
+			 <tr>
+				    <td><b><center>Total Grade points</center><b></td>
+				    <td><%= @grades.tot_egrades %></td> 
+			 </tr>
+
+			 <tr>
+				    <td><b><center>GPA</center></b></td>
+				    <td><%= format("%.4f",@grades.gpa) %></td>
+			 </tr>
+			 <tr>
+				    <td><center><b>CGPA</b></center></td>
+				    <td><%= format("%.4f",@grades.cgpa) %></td>
+			 </tr>
+			 <tr>
+				    <td><b><center>Percentage</center></b></td>
+				    <td><%= format("%.4f",@grades.percentage) %></td>
+			 </tr>
+	   </table>
+
+
+
+<br/>
+
+preserve your gradesheets because ACOE doesn't allow you to see your previous records
+<br/>
+<br/>
+
+</center>
+<center><% if logged_in? %>
+	<%= link_to "Save your marksheet", user_path(current_user) %>
+<% else %>
+	<%= link_to "Save Your marksheet", login_path %>
+<% end %>
+</center>
+
+<br>
+<%= link_to "<<Back", new_grade_path %>
+
+	   
+

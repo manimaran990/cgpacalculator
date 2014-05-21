@@ -1,0 +1,3 @@
+class Usergrades < ActiveRecord::Base
+	   belongs_to :user
+end

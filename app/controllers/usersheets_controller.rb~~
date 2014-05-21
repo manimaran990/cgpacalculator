@@ -1,0 +1,7 @@
+class UsersheetsController < ApplicationConjtroller
+	   
+	   def new
+			 @usersheets = Usersheet.new
+	   end
+
+end

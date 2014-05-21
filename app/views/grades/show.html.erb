@@ -1,0 +1,99 @@
+<%- model_class = Grade -%>
+<div class="page-header">
+<h2> Details </h2>
+</div>
+
+<center>
+	   <table border="1" width="450px" cellspacing="5px" cellpadding="5px">
+			 <tr>
+				    <th><center><b>SUBJECT</b></center></th>
+				    <th><center><b>GRADE</b></center></th>
+				    <th><center><b>CREDITS</b></center></th>
+			 </tr>
+			 <tr>
+				    <td>Visual Programming</td>
+				    <td><%= @grades.visualprog %></td>
+				    <td>3</td>
+			 </tr>
+			 <tr>
+				    <td>Software Projet Management</td>
+				    <td><%= @grades.spm %></td>
+				    <td>3</td>
+			 </tr> 
+			 <tr>
+				    <td>Unix Networking</td>
+				    <td><%= @grades.unixnetwork %></td>
+					<td>3</td>
+			 </tr>
+			 <tr>
+				    <td>Middleware</td>
+				    <td><%= @grades.middleware %></td>
+				    <td>3</td>
+			 </tr>
+	   		<tr>
+				   <td>XML and Webservices</td>
+				   <td><%= @grades.xmlweb %></td>
+				   <td>3</td>
+			</tr>
+			 <tr>
+				    <td>VP Lab</td>
+				    <td><%= @grades.vplab %></td>
+				    <td>2</td> 
+			</tr>
+			 <tr>
+				    <td>Unix Lab </td>
+				    <td><%= @grades.unixlab %></td>
+					<td>2</td>
+			 </tr>
+	   </table>
+	   <br/>
+
+	   <table border="1" width="350px" cellspacing="0px" cellpadding="5px">
+			 <tr>
+				    <td><b><center>Total Credits</center></b></td>
+				    <td><%= @grades.tot_credits %></td>
+			 </tr>
+			 <tr>
+				    <td><b><center>Total Grade points</center><b></td>
+				    <td><%= @grades.tot_egrades %></td> 
+			 </tr>
+
+			 <tr>
+				    <td><b><center>GPA</center></b></td>
+				    <td><%= format("%.4f",@grades.gpa) %></td>
+			 </tr>
+			 <tr>
+				    <td><center><b>CGPA</b></center></td>
+				    <td><%= format("%.4f",@grades.cgpa) %></td>
+			 </tr>
+			 <tr>
+				    <td><b><center>Percentage</center></b></td>
+				    <td><%= format("%.4f",@grades.percentage) %></td>
+			 </tr>
+	   </table>
+
+
+
+<br/>
+<% if logged_in? %>
+   <%= link_to 'Preserve', user_path(current_user)  %> your gradesheet
+   <% else %>
+		 <%= link_to 'Preserve', new_user_path  %> your gradesheets by making an account,
+    <% end %>
+
+because ACOE doesn't allow you to see your previous records
+<br/>
+<br/>
+
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              new_grade_path, :class => 'btn btn-primary'  %>
+   <% if logged_in? %>
+   <%= link_to 'Save', user_path(current_user), :class => 'btn' %>
+   <% else %>
+		 <%= link_to 'Save', login_path, :class=> 'btn btn-primary' %>
+    <% end %>
+</div>
+
+</center>

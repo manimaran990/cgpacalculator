@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CGPA calculator</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+		<div class="navbar-inverse">
+    <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#"></a>
+      <div class="nav-collapse">
+        <ul class="nav">
+		<% if logged_in? %>
+          <li><%= link_to "Home", user_path(current_user) %></li>
+		<li><%= link_to "Logout", logout_path %></li>
+  <% else %>
+		<li><%= link_to "Home", new_grade_path %></li>
+		<li><%= link_to "Login", login_path %></li>
+  <% end %>
+          <li><%= link_to "About", grades_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<body>
+<br/>
+<br/>
+<br/>
+	   <div class="container">
+			 <div class="row">
+				    <div class="span9">
+						  <p class="flash"i><%= flash.notice %></p>
+						  <%= yield %></div>
+				    <div class="span3">
+				    </div>
+			 </div>
+	   </div>
+<hr>
+	   <h6>
+			 <% if logged_in? %>
+				    <%= "Logged in as #{current_user.email}" %>
+				    <%= link_to "(logout)", logout_path %>
+			 <% else %>
+				    <%= link_to "(login)", login_path %>
+			 <% end %>
+	   </h6>
+
+</body>
+</html>

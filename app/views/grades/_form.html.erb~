@@ -1,0 +1,14 @@
+<%= bootstrap_form_for(@grade, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-2") do |f| %>
+     <%= f.select :visualprog, options_for_select(["S","A","B","C","D","E","U"]), label: "Visual Programming" %>
+      <%= f.select :spm, options_for_select(["S","A","B","C","D","E","U"]), label: "SPM" %>
+<%= f.select :unixnetwork, options_for_select(["S","A","B","C","D","E","U"]), label: "Unix Network" %>
+<%= f.select :middleware, options_for_select(["S","A","B","C","D","E","U"]), label: "Middleware" %>
+
+<%= f.select :xmlweb, options_for_select(["S","A","B","C","D","E","U"]), label: "Xml and Web" %>
+
+<%= f.select :vplab, options_for_select(["S","A","B","C","D","E","U"]), label: "VP Lab" %>
+
+<%= f.select :unixlab, options_for_select(["S","A","B","C","D","E","U"]), label: "Unix Lab" %>
+
+<center><%= f.submit "Calculate CGPA", :class => 'btn btn-primary' %></center>
+<% end %>

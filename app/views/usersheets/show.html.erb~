@@ -1,0 +1,97 @@
+<div class="page-header">
+<h2>Semester <%= @usersheets.semester %></h2>
+</div>
+<table width="200px">
+	   <tr>
+			 <td><b>Name :</b></td>
+			 <td><%= @usersheets.name.capitalize %></td>
+	   </tr>
+	   <tr>
+			 <td><b>Roll Number :</b></td>
+	   		 <td><%= @usersheets.rollnumber %></td>
+	   </tr>
+</table>
+<center>
+
+
+	   <table border="1" width="450px" cellspacing="5px" cellpadding="5px">
+			 <tr>
+				    <th><center><b>SUBJECT Code</b></center></th>
+				    <th><center><b>SUBJECT Name</b></center></th>
+				    <th><center><b>GRADE</b></center></th>
+				    <th><center><b>CREDITS</b></center></th>
+			 </tr>
+			 <tr>
+				    <td><%= @usersheets.subject1code %></td>
+				    <td><%= @usersheets.subject1name %></td>
+				    <td><%= @usersheets.subject1grade %></td>
+				    <td><%= @usersheets.subject1credit %></td>
+					
+			 </tr>
+			 <tr>
+				    <td><%= @usersheets.subject2code %></td>
+				    <td><%= @usersheets.subject2name %></td>
+				    <td><%= @usersheets.subject2grade %></td>
+				    <td><%= @usersheets.subject2credit %></td>
+			 </tr> 
+			 <tr>
+				    <td><%= @usersheets.subject3code %></td>
+				    <td><%= @usersheets.subject3name %></td>
+				    <td><%= @usersheets.subject3grade %></td>
+				    <td><%= @usersheets.subject3credit %></td>
+			 </tr>
+			 <tr>
+				    <td><%= @usersheets.subject4code %></td>
+				    <td><%= @usersheets.subject4name %></td>
+				    <td><%= @usersheets.subject4grade %></td>
+				    <td><%= @usersheets.subject4credit %></td>
+			 </tr>
+	   		<tr>
+				    <td><%= @usersheets.subject5code %></td>
+				    <td><%= @usersheets.subject5name %></td>
+				    <td><%= @usersheets.subject5grade %></td>
+				    <td><%= @usersheets.subject5credit %></td>
+			</tr>
+			 <tr>
+				    <td><%= @usersheets.subject6code %></td>
+				    <td><%= @usersheets.subject6name %></td>
+				    <td><%= @usersheets.subject6grade %></td>
+				    <td><%= @usersheets.subject6credit %></td>
+			</tr>
+			 <tr>
+				    <td><%= @usersheets.subject7code %></td>
+				    <td><%= @usersheets.subject7name %></td>
+				    <td><%= @usersheets.subject7grade %></td>
+				    <td><%= @usersheets.subject7credit %></td>
+			 </tr>
+	   </table>
+	   <br/>
+
+	   <table border="1" width="350px" cellspacing="0px" cellpadding="5px">
+			 <tr>
+				    <td><b><center>Total Credits</center></b></td>
+				    <td><%= @usersheets.tot_credits %></td>
+			 </tr>
+			 <tr>
+				    <td><b><center>Total Grade points</center><b></td>
+				    <td><%= @usersheets.tot_egrades %></td> 
+			 </tr>
+
+			 <tr>
+				    <td><b><center>GPA</center></b></td>
+				    <td><%= format("%.4f",@usersheets.gpa) %></td>
+			 </tr>
+			 <tr>
+				    <td><center><b>CGPA</b></center></td>
+				    <td><%= format("%.4f",@usersheets.cgpa) %></td>
+			 </tr>
+			 <tr>
+				    <td><b><center>Percentage</center></b></td>
+				    <td><%= format("%.4f",@usersheets.percentage) %></td>
+			 </tr>
+	   </table>
+	   <br>
+	   <%= link_to "back", user_path(current_user), class: 'btn btn-default' %>
+	   <%= link_to "delete", usersheet_path(@usersheets), method: :delete, data: {confirm: "Really delete the marksheet?"}, class: 'btn btn-primary' %>
+</center>
+

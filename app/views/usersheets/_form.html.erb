@@ -1,0 +1,25 @@
+<%= bootstrap_form_for(@usersheets, layout: :inline, label_col: "col-sm-2", control_col: "col-sm-2") do |f| %>
+	   <% @usersheets.errors.full_messages.each do |error| %>
+			 <%= error %>
+	   <% end %>
+	   <%= f.select :semester, options_for_select([1,2,3,4,5,6,7,8]) %><br><br>
+	   <%= f.text_field :rollnumber, label: "Roll Number", placeholder: "Roll Number" %><br><br>
+	   <%= f.text_field :subject1code, label: "Subject 1", placeholder: "Subject1 Code" %> <%= f.text_field :subject1name, hide_label: true, placeholder: "Subject1 Name" %> <%= f.text_field :subject1credit, hide_label: true, placeholder: "Subject1 Credit" %> <%= f.text_field :subject1grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+
+<%= f.text_field :subject2code, label: "Subject 2", placeholder: "Subject2 Code" %> <%= f.text_field :subject2name, hide_label: true, placeholder: "Subject2 Name" %> <%= f.text_field :subject2credit, hide_label: true, placeholder: "Subject2 Credit" %> <%= f.text_field :subject2grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+
+<%= f.text_field :subject3code, label: "Subject 3", placeholder: "Subject3 Code" %> <%= f.text_field :subject3name, hide_label: true, placeholder: "Subject3 Name" %> <%= f.text_field :subject3credit, hide_label: true, placeholder: "Subject3 Credit" %> <%= f.text_field :subject3grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+
+<%= f.text_field :subject4code, label: "Subject 4", placeholder: "Subject4 Code" %> <%= f.text_field :subject4name, hide_label: true, placeholder: "Subject4 Name" %> <%= f.text_field :subject4credit, hide_label: true, placeholder: "Subject4 Credit" %> <%= f.text_field :subject4grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+
+<%= f.text_field :subject5code, label: "Subject 5", placeholder: "Subject5 Code" %> <%= f.text_field :subject5name, hide_label: true, placeholder: "Subject5 Name" %> <%= f.text_field :subject5credit, hide_label: true, placeholder: "Subject5 Sredit" %> <%= f.text_field :subject5grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+
+<%= f.text_field :subject6code, label: "Subject 6", placeholder: "Subject6 Code" %> <%= f.text_field :subject6name, hide_label: true, placeholder: "Subject6 Name" %> <%= f.text_field :subject6credit, hide_label: true, placeholder: "Subject6 Credit" %> <%= f.text_field :subject6grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+
+<%= f.text_field :subject7code, label: "Subject 7", placeholder: "Subject7 Code" %> <%= f.text_field :subject7name, hide_label: true, placeholder: "Subject7 Name" %> <%= f.text_field :subject7credit, hide_label: true, placeholder: "Subject7 Sredit" %> <%= f.text_field :subject7grade, hide_label: true, placeholder: "Grade Obtained" %> <br>
+<br>
+
+	   <%= f.submit "Create sheet", class: 'btn btn-primary' %>
+	   </p>
+<% end %>
+	   
